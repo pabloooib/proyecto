@@ -1,1 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SGB · Patrones de Diseño · UPANA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="bg"></canvas>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="w" viewBox="0 0 24 24"><path d="M12 3l10 18H2zM12 10v5M12 18v.5"/></symbol>
+<symbol id="m" viewBox="0 0 24 24"><path d="M3 8l9-5 9 5-9 5zM3 13l9 5 9-5M3 17l9 5 9-5"/></symbol>
+<symbol id="c" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></symbol>
+<symbol id="s" viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5zM8.5 12l2.5 2.5 4.5-5"/></symbol>
+</defs></svg>
 
+<div id="fr">
+  <div id="hd">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Logo_UPANA.png/600px-Logo_UPANA.png" alt="UPANA" onerror="this.onerror=null;this.src='logo.png'">
+    <div id="bd" class="bd"><i></i><span></span></div>
+  </div>
+
+  <section class="sl" data-w="1" data-t="Portada">
+    <svg class="orb" viewBox="0 0 200 200" fill="none"><circle cx="100" cy="100" r="95" stroke="#D4A537" stroke-opacity=".5" stroke-dasharray="2 6"/><circle cx="100" cy="100" r="70" stroke="#8B5CF6" stroke-opacity=".6"/><circle cx="100" cy="100" r="45" stroke="#3B82F6" stroke-opacity=".7" stroke-dasharray="10 8"/><circle cx="100" cy="5" r="4" fill="#D4A537"/><circle cx="170" cy="100" r="4" fill="#8B5CF6"/><circle cx="100" cy="145" r="4" fill="#3B82F6"/></svg>
+    <h1 style="font-size:62px;line-height:1.05;max-width:760px;margin-top:70px;text-shadow:0 0 40px rgba(139,92,246,.7)">Sistema de Gestión de Bibliotecas (SGB)</h1>
+    <p id="ty" style="font:500 22px Outfit;color:#A5B4FC;margin:18px 0 6px;max-width:700px">Patrones de Diseño y Buenas Prácticas de Ingeniería de Software</p>
+    <p style="color:#D4A537;margin:0 0 36px">Universidad Panamericana de Guatemala · 17 de octubre de 2026</p>
+    <div class="g c2" style="max-width:700px">
+      <div class="card" style="border-color:var(--p);box-shadow:0 0 26px rgba(139,92,246,.3)"><p>Integrante</p><h3>José Pablo Ibañez Ibañez</h3></div>
+      <div class="card" style="border-color:var(--b);box-shadow:0 0 26px rgba(59,130,246,.3)"><p>Integrante</p><h3>Diego Josue Melgar Monzón</h3></div></div>
+  </section>
+
+  <section class="sl" data-w="1" data-t="Problema identificado">
+    <h2>Problema identificado</h2><p class="s">Dónde duele hoy la gestión de la biblioteca.</p>
+    <div class="g c2" id="pb"></div>
+  </section>
+
+  <section class="sl" data-w="1" data-t="Justificación">
+    <h2>Justificación</h2><p class="s">Sistema tradicional frente a arquitectura moderna.</p>
+    <div class="row" style="font:600 13px Outfit;color:var(--mu)"><span>Criterio</span><span>Sistema tradicional</span><span>Arquitectura moderna</span></div><div id="cmp"></div>
+  </section>
+
+  <section class="sl" data-w="1" data-t="Objetivos">
+    <h2>Objetivos</h2><p class="s">Qué queremos lograr con el diseño del SGB.</p>
+    <div class="cap" style="border-color:var(--g);background:rgba(212,165,55,.08);box-shadow:0 0 28px rgba(212,165,55,.25);margin-bottom:28px;font-size:17px;border-radius:24px"><svg class="ic" style="stroke:#D4A537"><use href="#m"/></svg><span><b style="font-family:Outfit;color:#fff">Objetivo general.</b> Diseñar un SGB mantenible y escalable para UPANA con patrones de diseño, SOLID y arquitectura en capas.</span></div>
+    <div style="display:flex;flex-direction:column;gap:16px;align-items:flex-start">
+      <div class="cap"><svg class="ic"><use href="#m"/></svg>Modelar el dominio con casos de uso y diagramas UML.</div>
+      <div class="cap" style="border-color:var(--p);box-shadow:0 0 22px rgba(139,92,246,.3);background:rgba(139,92,246,.08)"><svg class="ic" style="stroke:#A78BFA"><use href="#c"/></svg>Aplicar Singleton, Factory Method, Observer y Strategy.</div>
+      <div class="cap"><svg class="ic"><use href="#s"/></svg>Asegurar la calidad con pruebas automatizadas y CI/CD.</div></div>
+  </section>
+
+  <section class="sl" data-w="1" data-t="Stakeholders">
+    <h2>Stakeholders</h2><p class="s">Seleccione un perfil para ver qué espera del sistema.</p>
+    <div class="g c4" id="sk"></div><div class="info">Seleccione un perfil.</div>
+  </section>
+
+  <section class="sl" data-w="1" data-t="Requisitos">
+    <h2>Requisitos</h2><p class="s">Alterne entre lo que el sistema hace y cómo debe comportarse.</p>
+    <div style="display:flex;gap:10px;margin-bottom:20px"><button class="tab on" data-r="0">Funcionales (RF)</button><button class="tab" data-r="1">No funcionales (RNF)</button></div>
+    <div class="g c3" id="rq"></div>
+  </section>
+
+  <section class="sl" data-w="1" data-t="Product Backlog">
+    <h2>Product Backlog</h2><p class="s">Historias de usuario priorizadas por sprint (Scrum).</p>
+    <div class="g c3" id="kb"></div>
+  </section>
+
+  <section class="sl" data-w="2" data-t="Casos de uso">
+    <h2>Casos de uso</h2><p class="s">Seleccione un actor o un caso para iluminar sus conexiones.</p>
+    <div class="gl" id="uc" style="height:380px"><svg class="ls"></svg></div><div class="info">Seleccione un elemento del diagrama.</div>
+  </section>
+
+  <section class="sl" data-w="2" data-t="UML y patrones de diseño">
+    <h2>Diagramas UML y patrones</h2><p class="s">Elija un patrón para ver su estructura y su código.</p>
+    <div style="display:grid;grid-template-columns:210px 1fr;gap:22px">
+      <div id="pt"></div>
+      <div><div class="dg" id="dg"></div><div class="vs"><div class="tb"><i></i><i></i><i></i><span id="fn" style="margin-left:8px"></span></div><pre id="cd"></pre></div><div class="info" id="pi" style="margin-top:12px;min-height:40px"></div></div></div>
+  </section>
+
+  <section class="sl" data-w="2" data-t="Arquitectura propuesta">
+    <h2>Arquitectura propuesta</h2><p class="s">Capas y microservicios conectados. Seleccione un componente.</p>
+    <div class="gl" id="ar" style="height:380px"><svg class="ls"></svg></div><div class="info">Seleccione un componente.</div>
+  </section>
+
+  <section class="sl" data-w="2" data-t="Estrategia de pruebas">
+    <h2>Estrategia de pruebas</h2><p class="s">Pirámide de testing y pipeline CI/CD.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px">
+      <div><div class="py"><div>
+        <div class="pl" style="clip-path:polygon(38% 0,62% 0,70% 100%,30% 100%);background:linear-gradient(#EF4444,#B91C1C);color:#EF4444" data-i="<b>E2E.</b> Pocas y críticas: recorren el flujo completo en el navegador, de solicitar a devolver un libro."><span style="color:#fff">E2E</span></div>
+        <div class="pl" style="clip-path:polygon(30% 0,70% 0,85% 100%,15% 100%);background:linear-gradient(#8B5CF6,#6D28D9);color:#8B5CF6" data-i="<b>Integración.</b> Servicios y PostgreSQL juntos, con contenedores efímeros."><span style="color:#fff">Integración</span></div>
+        <div class="pl" style="flex:1.3;clip-path:polygon(15% 0,85% 0,100% 100%,0 100%);background:linear-gradient(#3B82F6,#1D4ED8);color:#3B82F6" data-i="<b>Unitarias.</b> Base de la pirámide: rápidas y numerosas. Validan reglas como Strategy sin base de datos."><span style="color:#fff">Unitarias</span></div></div></div>
+        <div class="info">Seleccione un nivel de la pirámide.</div></div>
+      <div class="card"><h3 style="margin-bottom:14px">Pipeline CI/CD</h3><div id="pl"></div></div>
+    </div>
+  </section>
+
+  <section class="sl" data-w="2" data-t="Buenas prácticas y SOLID">
+    <h2>Buenas prácticas y SOLID</h2><p class="s">Pase el cursor sobre cada principio para verlo aplicado a la biblioteca.</p>
+    <div class="g c5" id="so"></div>
+  </section>
+
+  <section class="sl" data-w="2" data-t="Conclusiones">
+    <h2>Conclusiones</h2><p class="s">Metas de diseño que guían el proyecto.</p>
+    <div class="g c3" style="margin-bottom:20px">
+      <div class="card"><div class="big">&lt; 2 s</div><p>Tiempo de respuesta objetivo</p></div>
+      <div class="card"><div class="big">99.9 %</div><p>Disponibilidad objetivo</p></div>
+      <div class="card"><div class="big">80 %</div><p>Cobertura mínima de pruebas</p></div></div>
+    <div class="g c3">
+      <div class="card"><h3>Mantenibilidad</h3><p>Los patrones convierten un cambio de regla en una extensión, no en una modificación riesgosa.</p></div>
+      <div class="card"><h3>Rendimiento</h3><p>Caché en Redis y servicios independientes sostienen la meta de 2 s en semanas de exámenes.</p></div>
+      <div class="card"><h3>Costos</h3><p>Los microservicios exigen más operación: conviene separar solo lo que escala distinto y automatizar con CI/CD.</p></div></div>
+  </section>
+
+  <section class="sl" data-w="2" data-t="Cierre y preguntas" style="text-align:center">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Logo_UPANA.png/600px-Logo_UPANA.png" alt="UPANA" style="height:110px;background:#fff;border-radius:18px;padding:6px;box-shadow:0 0 60px rgba(212,165,55,.7);margin-top:10px" onerror="this.onerror=null;this.src='logo.png'">
+    <h1 style="font-size:72px;margin-top:22px;text-shadow:0 0 44px rgba(139,92,246,.8)">Gracias</h1>
+    <p style="font:500 28px Outfit;color:#93C5FD;text-shadow:0 0 20px var(--b);margin:10px 0 28px">¿Preguntas?</p>
+    <div class="g c2" style="max-width:760px;margin:0 auto">
+      <div class="card" style="border-color:var(--p);box-shadow:0 0 26px rgba(139,92,246,.3)"><h3>José Pablo Ibañez Ibañez</h3></div>
+      <div class="card" style="border-color:var(--b);box-shadow:0 0 26px rgba(59,130,246,.3)"><h3>Diego Josue Melgar Monzón</h3></div></div>
+  </section>
+</div>
+
+<div id="menu"></div>
+<nav id="ct"><button id="pv" aria-label="Anterior">‹</button><span id="ctr"></span><button id="mn" aria-label="Menú">☰</button><button id="nx" aria-label="Siguiente">›</button></nav>
+<div id="pg"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
