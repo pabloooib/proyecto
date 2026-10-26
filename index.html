@@ -1,133 +1,234 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SGB · Patrones de Diseño · UPANA</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Biblio — Patrones de diseño y arquitectura de software</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<canvas id="bg"></canvas>
-<svg width="0" height="0" style="position:absolute"><defs>
-<symbol id="w" viewBox="0 0 24 24"><path d="M12 3l10 18H2zM12 10v5M12 18v.5"/></symbol>
-<symbol id="m" viewBox="0 0 24 24"><path d="M3 8l9-5 9 5-9 5zM3 13l9 5 9-5M3 17l9 5 9-5"/></symbol>
-<symbol id="c" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></symbol>
-<symbol id="s" viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5zM8.5 12l2.5 2.5 4.5-5"/></symbol>
-</defs></svg>
+<div class="halo"></div>
+<div class="logo">B.</div>
+<nav>
+  <a href="#p1">Pablo</a><a href="#p2">Diego</a><a href="#strategy">Strategy</a><a href="#tests">Pruebas</a>
+  <button id="pdf" class="pdfbtn" type="button">Descargar PDF</button>
+</nav>
 
-<div id="fr">
-  <div id="hd">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Logo_UPANA.png/600px-Logo_UPANA.png" alt="UPANA" onerror="this.onerror=null;this.src='logo.png'">
-    <div id="bd" class="bd"><i></i><span></span></div>
+<header class="hero pg" id="inicio">
+  <div class="fluid"></div><div class="blob b1"></div><div class="blob b2"></div>
+  <h1 class="xl" data-split>Patrones de diseño &amp; arquitectura de software</h1>
+  <p class="sm rv">Sistema de gestión de bibliotecas: del monolito acoplado a un núcleo de dominio probado, extensible y sin reglas duplicadas.</p>
+  <div class="books tilt"><div class="stack" id="stack"></div></div>
+  <span class="who p">Parte 1 · Presenta Pablo</span><span class="who d">Parte 2 · Presenta Diego</span>
+  <div class="giant xl" data-par="-12">Biblio</div>
+</header>
+<div class="mq"><div class="xl" id="mq"></div></div>
+
+<!-- ============ PARTE 1 · PABLO ============ -->
+<section class="sec part pg" id="p1">
+  <div><span class="who p">Parte 1 · Presentado por Pablo</span>
+  <div class="xl">Pablo</div>
+  <p class="sm" style="margin:20px auto 0">Contexto, problema, justificación, objetivos, interesados y requisitos.</p></div>
+</section>
+
+<section class="sec pg" id="tema">
+  <div class="bgword xl" data-par="-25">Tema</div>
+  <div class="head"><div><span class="who p">Pablo</span><p class="sm" style="margin-top:14px">El sistema en tres preguntas: para qué, cómo y cuándo.</p></div><h2 class="xl" data-split>El sistema de gestión de bibliotecas</h2></div>
+  <p class="lead">Un sistema de gestión de bibliotecas (SGB) automatiza el ciclo de vida del material bibliográfico: catálogo, préstamos, renovaciones, devoluciones, reservas, multas y reportes. Su valor está en aplicar las reglas de la institución de forma consistente, sin depender de registros manuales.</p>
+  <div class="g3">
+    <div class="card tilt"><h3 class="xl">¿Para qué se usa?</h3><p>Para saber qué ejemplares existen, dónde están y quién los tiene. Evita pérdidas, garantiza que cada usuario reciba el trato que le corresponde (plazos y multas distintos) y entrega estadísticas para decidir qué comprar.</p></div>
+    <div class="card tilt"><h3 class="xl">¿Cómo se usa?</h3><p>El bibliotecario identifica al lector con su carnet y escanea el ISBN o código del ejemplar. El sistema valida reglas (límite de préstamos, multas pendientes, disponibilidad), registra el préstamo y calcula la fecha de vencimiento. El lector consulta el catálogo y reserva desde la web, y recibe avisos por correo.</p></div>
+    <div class="card tilt"><h3 class="xl">¿Cuándo se usa?</h3><p>En cada evento del ciclo de vida: alta de ejemplares, préstamo y renovación, devolución, vencimiento de plazos, liberación de una reserva, cobro de multas y cierre de periodo académico para generar reportes.</p></div>
   </div>
+</section>
 
-  <section class="sl" data-w="1" data-t="Portada">
-    <svg class="orb" viewBox="0 0 200 200" fill="none"><circle cx="100" cy="100" r="95" stroke="#D4A537" stroke-opacity=".5" stroke-dasharray="2 6"/><circle cx="100" cy="100" r="70" stroke="#8B5CF6" stroke-opacity=".6"/><circle cx="100" cy="100" r="45" stroke="#3B82F6" stroke-opacity=".7" stroke-dasharray="10 8"/><circle cx="100" cy="5" r="4" fill="#D4A537"/><circle cx="170" cy="100" r="4" fill="#8B5CF6"/><circle cx="100" cy="145" r="4" fill="#3B82F6"/></svg>
-    <h1 style="font-size:62px;line-height:1.05;max-width:760px;margin-top:70px;text-shadow:0 0 40px rgba(139,92,246,.7)">Sistema de Gestión de Bibliotecas (SGB)</h1>
-    <p id="ty" style="font:500 22px Outfit;color:#A5B4FC;margin:18px 0 6px;max-width:700px">Patrones de Diseño y Buenas Prácticas de Ingeniería de Software</p>
-    <p style="color:#D4A537;margin:0 0 36px">Universidad Panamericana de Guatemala · 17 de octubre de 2026</p>
-    <div class="g c2" style="max-width:700px">
-      <div class="card" style="border-color:var(--p);box-shadow:0 0 26px rgba(139,92,246,.3)"><p>Integrante</p><h3>José Pablo Ibañez Ibañez</h3></div>
-      <div class="card" style="border-color:var(--b);box-shadow:0 0 26px rgba(59,130,246,.3)"><p>Integrante</p><h3>Diego Josue Melgar Monzón</h3></div></div>
-  </section>
+<section class="sec pg" id="problema">
+  <div class="bgword xl" data-par="-25">Problema</div>
+  <div class="head"><div><span class="who p">Pablo</span><p class="sm" style="margin-top:14px">Cuatro fallos de origen técnico que se refuerzan entre sí.</p></div><h2 class="xl" data-split>Problema identificado</h2></div>
+  <div class="g3">
+    <div class="card tilt"><h3 class="xl">Monolito legacy</h3><p>Interfaz, reglas y acceso a datos viven en un solo artefacto y en las mismas clases. Una corrección menor obliga a recompilar y redesplegar todo, y nadie se atreve a refactorizar porque no hay forma de verificar que nada se rompa.</p></div>
+    <div class="card tilt"><h3 class="xl">Fallos de concurrencia</h3><p>Dos lectores reservan el último ejemplar al mismo tiempo: ambos leen «disponible», ambos escriben y uno pisa al otro (lost update). Sin bloqueo optimista ni restricciones únicas en la base, el sistema promete un libro que ya no existe.</p></div>
+    <div class="card tilt"><h3 class="xl">Reglas duplicadas</h3><p>La multa se calcula en la pantalla de devolución, en una consulta SQL y en el reporte mensual. Cuando cambia la tarifa se corrige en un lugar y se olvida en los otros, así que los montos cobrados y los reportados no coinciden.</p></div>
+    <div class="card tilt"><h3 class="xl">Alto acoplamiento</h3><p>El dominio importa directamente el driver de la base de datos y el cliente de correo. No se puede probar una regla sin levantar infraestructura, y cambiar de proveedor implica reescribir lógica de negocio.</p></div>
+  </div>
+</section>
 
-  <section class="sl" data-w="1" data-t="Problema identificado">
-    <h2>Problema identificado</h2><p class="s">Dónde duele hoy la gestión de la biblioteca.</p>
-    <div class="g c2" id="pb"></div>
-  </section>
+<section class="sec pg" id="just">
+  <div class="bgword xl" data-par="-25">Porqué</div>
+  <div class="head"><div><span class="who p">Pablo</span><p class="sm" style="margin-top:14px">Por qué conviene invertir en rediseñar y no solo parchear.</p></div><h2 class="xl" data-split>Justificación</h2></div>
+  <div class="g3">
+    <div class="card tilt"><h3 class="xl">Técnica</h3><ul><li>Strategy aísla las reglas de multa y permite agregar categorías sin modificar código existente (principio abierto/cerrado).</li><li>Factory centraliza la creación de estrategias y elimina los if/else dispersos.</li><li>Observer desacopla las notificaciones del préstamo y la devolución.</li><li>La arquitectura hexagonal protege el dominio de la infraestructura y lo hace probable en milisegundos.</li></ul></div>
+    <div class="card tilt"><h3 class="xl">Operativa</h3><ul><li>Un solo cálculo de multa: cobros y reportes coinciden.</li><li>Sin reservas duplicadas: menos reclamos en mostrador.</li><li>Cambios de política en horas, no en semanas.</li><li>Nuevo personal se incorpora entendiendo capas y puertos, no un monolito.</li></ul></div>
+  </div>
+</section>
 
-  <section class="sl" data-w="1" data-t="Justificación">
-    <h2>Justificación</h2><p class="s">Sistema tradicional frente a arquitectura moderna.</p>
-    <div class="row" style="font:600 13px Outfit;color:var(--mu)"><span>Criterio</span><span>Sistema tradicional</span><span>Arquitectura moderna</span></div><div id="cmp"></div>
-  </section>
+<section class="sec pg" id="obj">
+  <div class="bgword xl" data-par="-25">Metas</div>
+  <div class="head"><div><span class="who p">Pablo</span><p class="sm" style="margin-top:14px">Un objetivo general que se desglosa en cuatro verificables.</p></div><h2 class="xl" data-split>Objetivos</h2></div>
+  <div class="card tilt"><h4>Objetivo general</h4><p style="max-width:900px;font-size:18px;color:#fff">Diseñar la arquitectura de un sistema de gestión de bibliotecas mantenible y extensible, aplicando patrones de diseño y arquitectura hexagonal para eliminar el acoplamiento y la duplicación de reglas del sistema legacy.</p></div>
+  <div class="g3">
+    <div class="card tilt"><h4>Específico 1</h4><p>Modelar el cálculo de multas con Strategy y Factory para tres tipos de usuario, con cero condicionales por tipo en el dominio.</p></div>
+    <div class="card tilt"><h4>Específico 2</h4><p>Garantizar reservas sin duplicados bajo concurrencia mediante bloqueo optimista y restricciones en la base de datos.</p></div>
+    <div class="card tilt"><h4>Específico 3</h4><p>Desacoplar notificaciones con Observer para añadir canales sin tocar préstamos ni devoluciones.</p></div>
+    <div class="card tilt"><h4>Específico 4</h4><p>Alcanzar una cobertura mínima del 80% en el dominio con una pirámide de pruebas automatizada.</p></div>
+  </div>
+</section>
 
-  <section class="sl" data-w="1" data-t="Objetivos">
-    <h2>Objetivos</h2><p class="s">Qué queremos lograr con el diseño del SGB.</p>
-    <div class="cap" style="border-color:var(--g);background:rgba(212,165,55,.08);box-shadow:0 0 28px rgba(212,165,55,.25);margin-bottom:28px;font-size:17px;border-radius:24px"><svg class="ic" style="stroke:#D4A537"><use href="#m"/></svg><span><b style="font-family:Outfit;color:#fff">Objetivo general.</b> Diseñar un SGB mantenible y escalable para UPANA con patrones de diseño, SOLID y arquitectura en capas.</span></div>
-    <div style="display:flex;flex-direction:column;gap:16px;align-items:flex-start">
-      <div class="cap"><svg class="ic"><use href="#m"/></svg>Modelar el dominio con casos de uso y diagramas UML.</div>
-      <div class="cap" style="border-color:var(--p);box-shadow:0 0 22px rgba(139,92,246,.3);background:rgba(139,92,246,.08)"><svg class="ic" style="stroke:#A78BFA"><use href="#c"/></svg>Aplicar Singleton, Factory Method, Observer y Strategy.</div>
-      <div class="cap"><svg class="ic"><use href="#s"/></svg>Asegurar la calidad con pruebas automatizadas y CI/CD.</div></div>
-  </section>
+<section class="sec pg" id="stake">
+  <div class="bgword xl" data-par="-25">Actores</div>
+  <div class="head"><div><span class="who p">Pablo</span><p class="sm" style="margin-top:14px">Matriz de interesados: qué espera cada uno y cuánto pesa en las decisiones.</p></div><h2 class="xl" data-split>Stakeholders</h2></div>
+  <div class="tw"><table><thead><tr><th>Interesado</th><th>Rol en el sistema</th><th>Qué necesita</th><th>Influencia</th><th>Interés</th></tr></thead><tbody>
+    <tr><td>Lectores y estudiantes</td><td>Buscan, reservan y reciben avisos</td><td>Catálogo claro, reservas confiables, multas transparentes</td><td><span class="tag b">Media</span></td><td><span class="tag">Alto</span></td></tr>
+    <tr><td>Bibliotecarios</td><td>Operan préstamos y devoluciones</td><td>Flujo rápido en mostrador y reglas que no obliguen a excepciones manuales</td><td><span class="tag m">Alta</span></td><td><span class="tag">Alto</span></td></tr>
+    <tr><td>Administradores</td><td>Definen políticas, tarifas y reportes</td><td>Cambiar tarifas sin desarrollo y obtener reportes consistentes</td><td><span class="tag m">Alta</span></td><td><span class="tag">Alto</span></td></tr>
+    <tr><td>Mantenedores</td><td>Evolucionan y operan el software</td><td>Código modular, pruebas automáticas y despliegues seguros</td><td><span class="tag b">Media</span></td><td><span class="tag">Alto</span></td></tr>
+  </tbody></table></div>
+</section>
 
-  <section class="sl" data-w="1" data-t="Stakeholders">
-    <h2>Stakeholders</h2><p class="s">Seleccione un perfil para ver qué espera del sistema.</p>
-    <div class="g c4" id="sk"></div><div class="info">Seleccione un perfil.</div>
-  </section>
+<section class="sec pg" id="req">
+  <div class="bgword xl" data-par="-25">Requisitos</div>
+  <div class="head"><div><span class="who p">Pablo</span><p class="sm" style="margin-top:14px">Lo que el sistema hace y la calidad con la que debe hacerlo.</p></div><h2 class="xl" data-split>Requisitos</h2></div>
+  <div class="g3">
+    <div class="card tilt"><h3 class="xl">Funcionales</h3><ul><li><b>RF-01</b> Registrar, editar y dar de baja libros y ejemplares.</li><li><b>RF-02</b> Buscar por título, autor, ISBN y materia.</li><li><b>RF-03</b> Registrar préstamos validando límite y multas pendientes.</li><li><b>RF-04</b> Renovar préstamos si no hay reservas.</li><li><b>RF-05</b> Registrar devoluciones y calcular la multa.</li><li><b>RF-06</b> Reservar ejemplares con cola por orden de llegada.</li><li><b>RF-07</b> Notificar disponibilidad y vencimientos.</li><li><b>RF-08</b> Reporte de morosos y de uso del catálogo.</li></ul></div>
+    <div class="card tilt"><h3 class="xl">No funcionales</h3><ul><li><b>RNF-01 Rendimiento:</b> búsquedas y préstamos en menos de 200 ms (p95).</li><li><b>RNF-02 Concurrencia:</b> nunca dos reservas activas sobre el mismo ejemplar.</li><li><b>RNF-03 Mantenibilidad:</b> nueva regla de multa sin modificar clases existentes.</li><li><b>RNF-04 Testabilidad:</b> dominio probable sin base de datos ni red.</li><li><b>RNF-05 Disponibilidad:</b> 99.9% en horario de atención.</li><li><b>RNF-06 Seguridad:</b> roles diferenciados y datos personales protegidos.</li><li><b>RNF-07 Auditoría:</b> registro de cada préstamo, devolución y cobro.</li></ul></div>
+  </div>
+</section>
 
-  <section class="sl" data-w="1" data-t="Requisitos">
-    <h2>Requisitos</h2><p class="s">Alterne entre lo que el sistema hace y cómo debe comportarse.</p>
-    <div style="display:flex;gap:10px;margin-bottom:20px"><button class="tab on" data-r="0">Funcionales (RF)</button><button class="tab" data-r="1">No funcionales (RNF)</button></div>
-    <div class="g c3" id="rq"></div>
-  </section>
+<!-- ============ PARTE 2 · DIEGO ============ -->
+<section class="sec part two pg" id="p2">
+  <div><span class="who d">Parte 2 · Presentado por Diego</span>
+  <div class="xl">Diego</div>
+  <p class="sm" style="margin:20px auto 0">Backlog, casos de uso, patrones, arquitectura y pruebas.</p></div>
+</section>
 
-  <section class="sl" data-w="1" data-t="Product Backlog">
-    <h2>Product Backlog</h2><p class="s">Historias de usuario priorizadas por sprint (Scrum).</p>
-    <div class="g c3" id="kb"></div>
-  </section>
+<section class="sec pg" id="backlog">
+  <div class="bgword xl" data-par="-25">Backlog</div>
+  <div class="head"><div><span class="who d">Diego</span><p class="sm" style="margin-top:14px">Historias priorizadas con criterios de aceptación en formato Dado / Cuando / Entonces.</p></div><h2 class="xl" data-split>Product backlog</h2></div>
+  <div class="tw"><table><thead><tr><th>ID</th><th>Historia de usuario</th><th>Prioridad</th><th>Criterios de aceptación</th></tr></thead><tbody>
+    <tr><td>HU-01</td><td>Como bibliotecario quiero registrar un préstamo para controlar quién tiene cada ejemplar.</td><td><span class="tag">Alta</span></td><td>Dado un lector sin multas, cuando escaneo un ejemplar disponible, entonces se crea el préstamo con fecha de vencimiento según su tipo.</td></tr>
+    <tr><td>HU-02</td><td>Como lector quiero reservar un libro prestado para obtenerlo cuando se libere.</td><td><span class="tag">Alta</span></td><td>Dado un ejemplar prestado, cuando dos lectores reservan a la vez, entonces solo uno obtiene el turno y el otro recibe un aviso de conflicto.</td></tr>
+    <tr><td>HU-03</td><td>Como administrador quiero que la multa dependa del tipo de usuario para aplicar la política vigente.</td><td><span class="tag">Alta</span></td><td>Dado un retraso de 12 días, cuando devuelve un docente, entonces la multa es 7 días × $0.25 = $1.75.</td></tr>
+    <tr><td>HU-04</td><td>Como lector quiero un aviso cuando mi reserva esté disponible para recogerla a tiempo.</td><td><span class="tag m">Media</span></td><td>Dado un ejemplar devuelto con reservas, cuando se registra la devolución, entonces el primero en la cola recibe un correo.</td></tr>
+    <tr><td>HU-05</td><td>Como administrador quiero un reporte de morosos para gestionar cobros.</td><td><span class="tag m">Media</span></td><td>Dado un periodo, cuando genero el reporte, entonces los montos coinciden con los cobrados en mostrador.</td></tr>
+    <tr><td>HU-06</td><td>Como bibliotecario quiero dar de alta ejemplares para mantener el catálogo al día.</td><td><span class="tag b">Baja</span></td><td>Dado un ISBN nuevo, cuando registro el ejemplar, entonces aparece en el catálogo como disponible.</td></tr>
+  </tbody></table></div>
+</section>
 
-  <section class="sl" data-w="2" data-t="Casos de uso">
-    <h2>Casos de uso</h2><p class="s">Seleccione un actor o un caso para iluminar sus conexiones.</p>
-    <div class="gl" id="uc" style="height:380px"><svg class="ls"></svg></div><div class="info">Seleccione un elemento del diagrama.</div>
-  </section>
+<section class="sec pg" id="casos">
+  <div class="bgword xl" data-par="-25">Casos de uso</div>
+  <div class="head"><div><span class="who d">Diego</span><p class="sm" style="margin-top:14px">Los tres flujos principales, con su alternativa más relevante.</p></div><h2 class="xl" data-split>Casos de uso</h2></div>
+  <div class="g3">
+    <div class="card tilt"><h4>CU-01 · Prestar libro · Actor: bibliotecario</h4><ol class="st"><li>Identifica al lector con su carnet.</li><li>Escanea el código del ejemplar.</li><li>El sistema valida límite, multas y disponibilidad.</li><li>Registra el préstamo y calcula el vencimiento.</li><li>Imprime o envía el comprobante.</li></ol><p><b>Alternativa:</b> si el lector tiene multa pendiente, se bloquea el préstamo y se ofrece cobrarla.</p></div>
+    <div class="card tilt"><h4>CU-02 · Reservar ejemplar · Actor: lector</h4><ol class="st"><li>Busca el título en el catálogo.</li><li>Elige «Reservar» sobre un ejemplar prestado.</li><li>El sistema registra el turno con control de versión.</li><li>Confirma la posición en la cola.</li><li>Al devolverse, se dispara el aviso.</li></ol><p><b>Alternativa:</b> si otro lector tomó el turno primero, se reintenta con la versión actualizada.</p></div>
+    <div class="card tilt"><h4>CU-03 · Devolver con multa · Actor: bibliotecario</h4><ol class="st"><li>Escanea el ejemplar devuelto.</li><li>El sistema obtiene el préstamo y los días de retraso.</li><li>La Factory entrega la estrategia del tipo de usuario.</li><li>Se calcula y muestra la multa.</li><li>Se cierra el préstamo y se publica el evento.</li></ol><p><b>Alternativa:</b> sin retraso, no se genera multa.</p></div>
+  </div>
+</section>
 
-  <section class="sl" data-w="2" data-t="UML y patrones de diseño">
-    <h2>Diagramas UML y patrones</h2><p class="s">Elija un patrón para ver su estructura y su código.</p>
-    <div style="display:grid;grid-template-columns:210px 1fr;gap:22px">
-      <div id="pt"></div>
-      <div><div class="dg" id="dg"></div><div class="vs"><div class="tb"><i></i><i></i><i></i><span id="fn" style="margin-left:8px"></span></div><pre id="cd"></pre></div><div class="info" id="pi" style="margin-top:12px;min-height:40px"></div></div></div>
-  </section>
+<section class="sec pg" id="strategy">
+  <div class="bgword xl" data-par="-25">Strategy</div>
+  <div class="head"><div><span class="who d">Diego</span><p class="sm" style="margin-top:14px">Define una familia de algoritmos intercambiables en tiempo de ejecución. Aquí, una por tipo de usuario.</p></div><h2 class="xl" data-split>Patrón Strategy</h2></div>
+  <div class="g3" style="margin:0 0 24px">
+    <pre class="uml">«interface» FineStrategy
+ + calculate(days, bookValue): Money
+        ▲
+  ┌─────┼───────────┐
+Estudiante  Docente   Vip
+ $0.50/día  $0.25/día $0.10/día
+ sin gracia 5 d gracia 10 d gracia
+ tope: valor tope: valor tope: $20
 
-  <section class="sl" data-w="2" data-t="Arquitectura propuesta">
-    <h2>Arquitectura propuesta</h2><p class="s">Capas y microservicios conectados. Seleccione un componente.</p>
-    <div class="gl" id="ar" style="height:380px"><svg class="ls"></svg></div><div class="info">Seleccione un componente.</div>
-  </section>
-
-  <section class="sl" data-w="2" data-t="Estrategia de pruebas">
-    <h2>Estrategia de pruebas</h2><p class="s">Pirámide de testing y pipeline CI/CD.</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px">
-      <div><div class="py"><div>
-        <div class="pl" style="clip-path:polygon(38% 0,62% 0,70% 100%,30% 100%);background:linear-gradient(#EF4444,#B91C1C);color:#EF4444" data-i="<b>E2E.</b> Pocas y críticas: recorren el flujo completo en el navegador, de solicitar a devolver un libro."><span style="color:#fff">E2E</span></div>
-        <div class="pl" style="clip-path:polygon(30% 0,70% 0,85% 100%,15% 100%);background:linear-gradient(#8B5CF6,#6D28D9);color:#8B5CF6" data-i="<b>Integración.</b> Servicios y PostgreSQL juntos, con contenedores efímeros."><span style="color:#fff">Integración</span></div>
-        <div class="pl" style="flex:1.3;clip-path:polygon(15% 0,85% 0,100% 100%,0 100%);background:linear-gradient(#3B82F6,#1D4ED8);color:#3B82F6" data-i="<b>Unitarias.</b> Base de la pirámide: rápidas y numerosas. Validan reglas como Strategy sin base de datos."><span style="color:#fff">Unitarias</span></div></div></div>
-        <div class="info">Seleccione un nivel de la pirámide.</div></div>
-      <div class="card"><h3 style="margin-bottom:14px">Pipeline CI/CD</h3><div id="pl"></div></div>
+LoanService ──usa──▶ FineStrategy</pre>
+    <div class="card tilt"><h4>Cómo funciona</h4><p>El servicio de devoluciones depende solo de la interfaz FineStrategy. Cada tipo de usuario aporta su implementación y el servicio nunca pregunta «¿qué tipo eres?». Agregar una categoría nueva es crear una clase, sin tocar las existentes.</p><p>Pruébalo: cambia el tipo de usuario y los días de retraso en el simulador.</p></div>
+  </div>
+  <div class="sim">
+    <div class="card tilt">
+      <span class="sm">Tipo de usuario</span>
+      <div class="seg" id="seg"><button class="on" data-k="est">Estudiante</button><button data-k="doc">Docente</button><button data-k="vip">VIP</button></div>
+      <label>Días de retraso <b id="vd">12</b></label><input type="range" id="days" min="0" max="40" value="12" aria-label="Días de retraso">
+      <label>Valor del libro <b id="vv">$25</b></label><input type="range" id="val" min="5" max="60" value="25" aria-label="Valor del libro">
+      <pre id="code"></pre>
     </div>
-  </section>
+    <div class="card tilt">
+      <span class="sm">Multa a pagar</span>
+      <div class="big xl"><small>$</small><span id="out">0.00</span></div>
+      <div class="bars" id="bars"></div>
+      <svg class="chart" viewBox="0 0 400 90" preserveAspectRatio="none"><path id="curve" fill="none" stroke="#E11D48" stroke-width="3" stroke-linejoin="round"/><line id="mark" y1="0" y2="90" stroke="#fff" stroke-opacity=".4" stroke-dasharray="4"/></svg>
+      <span class="sm">Multa acumulada de 0 a 40 días</span>
+    </div>
+  </div>
+</section>
 
-  <section class="sl" data-w="2" data-t="Buenas prácticas y SOLID">
-    <h2>Buenas prácticas y SOLID</h2><p class="s">Pase el cursor sobre cada principio para verlo aplicado a la biblioteca.</p>
-    <div class="g c5" id="so"></div>
-  </section>
+<section class="sec pg" id="factory">
+  <div class="bgword xl" data-par="-25">Factory</div>
+  <div class="head"><div><span class="who d">Diego</span><p class="sm" style="margin-top:14px">Centraliza qué estrategia se crea para cada tipo de usuario.</p></div><h2 class="xl" data-split>Patrón Factory</h2></div>
+  <div class="g3">
+    <pre class="uml">FineStrategyFactory
+ + forUser(type): FineStrategy
+      │ crea
+      ▼
+«interface» FineStrategy
+ ├─ EstudianteStrategy
+ ├─ DocenteStrategy
+ └─ VipStrategy
 
-  <section class="sl" data-w="2" data-t="Conclusiones">
-    <h2>Conclusiones</h2><p class="s">Metas de diseño que guían el proyecto.</p>
-    <div class="g c3" style="margin-bottom:20px">
-      <div class="card"><div class="big">&lt; 2 s</div><p>Tiempo de respuesta objetivo</p></div>
-      <div class="card"><div class="big">99.9 %</div><p>Disponibilidad objetivo</p></div>
-      <div class="card"><div class="big">80 %</div><p>Cobertura mínima de pruebas</p></div></div>
-    <div class="g c3">
-      <div class="card"><h3>Mantenibilidad</h3><p>Los patrones convierten un cambio de regla en una extensión, no en una modificación riesgosa.</p></div>
-      <div class="card"><h3>Rendimiento</h3><p>Caché en Redis y servicios independientes sostienen la meta de 2 s en semanas de exámenes.</p></div>
-      <div class="card"><h3>Costos</h3><p>Los microservicios exigen más operación: conviene separar solo lo que escala distinto y automatizar con CI/CD.</p></div></div>
-  </section>
+ReturnService ─▶ Factory ─▶ Strategy</pre>
+    <div class="card tilt"><h4>Por qué existe</h4><p>Sin Factory, cada pantalla decidiría con un if/else qué multa aplicar y ahí vuelve la duplicación. La fábrica es el único lugar que conoce las clases concretas; el resto del sistema solo ve la interfaz.</p><h4>Pruébalo</h4><label style="margin:0 0 10px">Tipo de usuario</label><select id="fk" style="background:#111;border:1px solid var(--line);border-radius:10px;padding:10px;width:100%"><option value="est">Estudiante</option><option value="doc">Docente</option><option value="vip">VIP</option></select><p id="fo" style="margin-top:12px;color:#fff;font-weight:800">→ EstudianteStrategy</p></div>
+  </div>
+</section>
 
-  <section class="sl" data-w="2" data-t="Cierre y preguntas" style="text-align:center">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Logo_UPANA.png/600px-Logo_UPANA.png" alt="UPANA" style="height:110px;background:#fff;border-radius:18px;padding:6px;box-shadow:0 0 60px rgba(212,165,55,.7);margin-top:10px" onerror="this.onerror=null;this.src='logo.png'">
-    <h1 style="font-size:72px;margin-top:22px;text-shadow:0 0 44px rgba(139,92,246,.8)">Gracias</h1>
-    <p style="font:500 28px Outfit;color:#93C5FD;text-shadow:0 0 20px var(--b);margin:10px 0 28px">¿Preguntas?</p>
-    <div class="g c2" style="max-width:760px;margin:0 auto">
-      <div class="card" style="border-color:var(--p);box-shadow:0 0 26px rgba(139,92,246,.3)"><h3>José Pablo Ibañez Ibañez</h3></div>
-      <div class="card" style="border-color:var(--b);box-shadow:0 0 26px rgba(59,130,246,.3)"><h3>Diego Josue Melgar Monzón</h3></div></div>
-  </section>
-</div>
+<section class="sec pg" id="observer">
+  <div class="bgword xl" data-par="-25">Observer</div>
+  <div class="head"><div><span class="who d">Diego</span><p class="sm" style="margin-top:14px">Un evento, varios suscriptores independientes.</p></div><h2 class="xl" data-split>Patrón Observer</h2></div>
+  <div class="g3">
+    <pre class="uml">EventPublisher
+ + subscribe(o) / publish(evt)
+      │ notifica
+      ▼
+«interface» Observer
+ + onEvent(evt)
+ ├─ NotificadorEmail
+ ├─ PanelBibliotecario
+ └─ Auditoria
 
-<div id="menu"></div>
-<nav id="ct"><button id="pv" aria-label="Anterior">‹</button><span id="ctr"></span><button id="mn" aria-label="Menú">☰</button><button id="nx" aria-label="Siguiente">›</button></nav>
-<div id="pg"></div>
+Evento: LibroDevuelto</pre>
+    <div class="card tilt"><h4>Cómo funciona</h4><p>La devolución publica un evento LibroDevuelto y termina. Cada observador reacciona por su cuenta: avisa a la primera reserva, actualiza el panel y registra la auditoría. Agregar un canal SMS es suscribir una clase nueva.</p><button class="pill on" id="ret" type="button" style="margin-top:14px">Devolver libro</button><ul id="log"></ul></div>
+  </div>
+</section>
 
-<script src="script.js"></script>
+<section class="sec pg" id="hex">
+  <div class="bgword xl" data-par="-25">Hexagonal</div>
+  <div class="head"><div><span class="who d">Diego</span><p class="sm" style="margin-top:14px">Arquitectura hexagonal con la regla de dependencia de Clean Architecture.</p></div><h2 class="xl" data-split>Arquitectura hexagonal</h2></div>
+  <div class="bento">
+    <div class="card c1 tilt"><span class="badge">Núcleo protegido</span><h3 class="xl" style="margin-top:18px">Las dependencias apuntan hacia adentro</h3><p>El dominio contiene entidades y reglas (Préstamo, Reserva, estrategias de multa). Alrededor, la capa de aplicación define casos de uso y puertos. Fuera quedan los adaptadores. Nada del interior conoce al exterior.</p>
+      <svg class="hex" viewBox="0 0 400 220" fill="none" stroke="#fff" stroke-opacity=".6"><polygon points="200,15 290,60 290,160 200,205 110,160 110,60" stroke="#E11D48" stroke-width="3" fill="rgba(225,29,72,.12)"/><text x="200" y="108" text-anchor="middle" fill="#fff" stroke="none" font-size="15" font-weight="800">DOMINIO</text><text x="200" y="128" text-anchor="middle" fill="#9CA3AF" stroke="none" font-size="10">Strategy · Factory · Observer</text><g stroke-dasharray="5"><line x1="30" y1="60" x2="110" y2="85"/><line x1="30" y1="160" x2="110" y2="135"/><line x1="290" y1="85" x2="370" y2="60"/><line x1="290" y1="135" x2="370" y2="160"/></g><g fill="#fff" stroke="none" font-size="11"><text x="8" y="56">API REST</text><text x="8" y="176">Interfaz web</text><text x="320" y="56">Base de datos</text><text x="320" y="176">Correo</text></g></svg></div>
+    <div class="card c2 tilt"><h4>Puertos de entrada</h4><p>Casos de uso como PrestarLibro, ReservarEjemplar y RegistrarDevolucion. Los invocan la API y la interfaz.</p></div>
+    <div class="card c3 tilt"><h4>Puertos de salida</h4><p>Interfaces como LoanRepository y NotificationSender, definidas por el dominio e implementadas afuera.</p></div>
+    <div class="card c4 tilt"><h4>Adaptadores</h4><p>Controlador REST, repositorio SQL con bloqueo optimista, cliente SMTP. Se reemplazan sin tocar el núcleo.</p></div>
+    <div class="card c5 tilt"><h4>Beneficio medible</h4><p>El dominio se prueba con repositorios en memoria. Cambiar de base de datos o de proveedor de correo es escribir un adaptador.</p></div>
+  </div>
+</section>
+
+<section class="sec pg" id="tests">
+  <div class="bgword xl" data-par="-25">Pruebas</div>
+  <div class="head"><div><span class="who d">Diego</span><p class="sm" style="margin-top:14px">Muchas pruebas rápidas abajo, pocas y costosas arriba.</p></div><h2 class="xl" data-split>Estrategia de pruebas</h2></div>
+  <div class="g3">
+    <div><div class="pyr"><div style="--w:34%">E2E · 10%</div><div style="--w:64%">Integración · 20%</div><div style="--w:100%">Unitarias · 70%</div></div></div>
+    <div class="card tilt"><h4>Unitarias</h4><p>Cada FineStrategy con casos límite (día 0, justo en la gracia, tope). Servicios con repositorios en memoria. Corren en milisegundos.</p><h4>Integración</h4><p>Repositorio SQL contra una base real en contenedor. Incluye la prueba de dos reservas simultáneas que debe dejar una sola ganadora.</p><h4>E2E</h4><p>Flujos completos por la API: prestar, reservar, devolver con multa y recibir el aviso.</p></div>
+  </div>
+</section>
+
+<footer class="pg" id="fin">
+  <div class="fl"><div><span class="who p">Pablo</span> <span class="who d">Diego</span><p class="sm" style="margin-top:14px">Gracias. Proyecto académico de patrones de diseño y arquitectura de software.</p></div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:flex-start"><a class="pill" href="#inicio">Volver arriba</a><button class="pill on pdfbtn" type="button">Descargar PDF</button></div></div>
+  <div class="xl" data-par="-6">Biblio</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
