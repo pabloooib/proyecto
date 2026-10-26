@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Biblio — Patrones de diseño y arquitectura de software</title>
+<title>Biblioteca —Ing. de software</title>
 <script>document.documentElement.classList.add('js')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
@@ -25,7 +25,7 @@
   <h1 class="xl" data-split>Patrones de diseño &amp; arquitectura de software</h1>
   <p class="sm rv">Sistema de gestión de bibliotecas: del monolito acoplado a un núcleo de dominio probado, extensible y sin reglas duplicadas.</p>
   <div class="books"><div class="stack" id="stack"></div></div>
-  <span class="who p">Parte 1 · Presenta Pablo</span><span class="who d">Parte 2 · Presenta Diego</span>
+  <span class="who p">Parte 1 · Presenta Diego</span><span class="who d">Parte 2 · Presenta Pablo</span>
   <div class="giant xl" data-par="-12">Biblio</div>
 </header>
 <div class="mq"><div class="xl" id="mq"></div></div>
@@ -34,21 +34,21 @@
 <section class="sec pg" id="agenda">
   <div class="bgword xl" data-par="-25">Agenda</div>
   <div class="head"><div><p class="sm">13 temas repartidos entre dos expositores. Toca un tema para saltar a él.</p></div><h2 class="xl" data-split>Agenda de la presentación</h2></div>
-  <div class="legend"><button class="who p" type="button" data-focus="p">Pablo · temas 01–06</button><button class="who d" type="button" data-focus="d">Diego · temas 07–13</button><span class="sm">Toca un expositor para resaltar su parte</span></div>
+  <div class="legend"><button class="who p" type="button" data-focus="p">Diego · temas 01–06</button><button class="who d" type="button" data-focus="d">Pablo · temas 07–13</button><span class="sm">Toca un expositor para resaltar su parte</span></div>
   <div class="agenda">
-    <a class="tile p" data-by="p" href="#tema"><b>01</b><span>El sistema de bibliotecas</span><em>Pablo</em></a>
-    <a class="tile p" data-by="p" href="#problema"><b>02</b><span>Problema identificado</span><em>Pablo</em></a>
-    <a class="tile p" data-by="p" href="#just"><b>03</b><span>Justificación</span><em>Pablo</em></a>
-    <a class="tile p" data-by="p" href="#obj"><b>04</b><span>Objetivos</span><em>Pablo</em></a>
-    <a class="tile p" data-by="p" href="#stake"><b>05</b><span>Stakeholders</span><em>Pablo</em></a>
-    <a class="tile p" data-by="p" href="#req"><b>06</b><span>Requisitos</span><em>Pablo</em></a>
-    <a class="tile d" data-by="d" href="#backlog"><b>07</b><span>Product backlog</span><em>Diego</em></a>
-    <a class="tile d" data-by="d" href="#casos"><b>08</b><span>Casos de uso</span><em>Diego</em></a>
-    <a class="tile d" data-by="d" href="#strategy"><b>09</b><span>UML y patrones</span><em>Diego</em></a>
-    <a class="tile d" data-by="d" href="#hex"><b>10</b><span>Arquitectura hexagonal</span><em>Diego</em></a>
-    <a class="tile d" data-by="d" href="#tests"><b>11</b><span>Estrategia de pruebas</span><em>Diego</em></a>
-    <a class="tile d" data-by="d" href="#riesgos"><b>12</b><span>Riesgos y seguridad</span><em>Diego</em></a>
-    <a class="tile d" data-by="d" href="#infra"><b>13</b><span>Infraestructura y despliegue</span><em>Diego</em></a>
+    <a class="tile p" data-by="p" href="#tema"><b>01</b><span>El sistema de bibliotecas</span><em>Diego</em></a>
+    <a class="tile p" data-by="p" href="#problema"><b>02</b><span>Problema identificado</span><em>Diego</em></a>
+    <a class="tile p" data-by="p" href="#just"><b>03</b><span>Justificación</span><em>Diego</em></a>
+    <a class="tile p" data-by="p" href="#obj"><b>04</b><span>Objetivos</span><em>Diego</em></a>
+    <a class="tile p" data-by="p" href="#stake"><b>05</b><span>Stakeholders</span><em>Diego</em></a>
+    <a class="tile p" data-by="p" href="#req"><b>06</b><span>Requisitos</span><em>Diego</em></a>
+    <a class="tile d" data-by="d" href="#backlog"><b>07</b><span>Product backlog</span><em>Pablo</em></a>
+    <a class="tile d" data-by="d" href="#casos"><b>08</b><span>Casos de uso</span><em>Pablo</em></a>
+    <a class="tile d" data-by="d" href="#strategy"><b>09</b><span>UML y patrones</span><em>Pablo</em></a>
+    <a class="tile d" data-by="d" href="#hex"><b>10</b><span>Arquitectura hexagonal</span><em>Pablo</em></a>
+    <a class="tile d" data-by="d" href="#tests"><b>11</b><span>Estrategia de pruebas</span><em>Pablo</em></a>
+    <a class="tile d" data-by="d" href="#riesgos"><b>12</b><span>Riesgos y seguridad</span><em>Pablo</em></a>
+    <a class="tile d" data-by="d" href="#infra"><b>13</b><span>Infraestructura y despliegue</span><em>Pablo</em></a>
   </div>
   <div class="stats">
     <div class="stat"><span class="xl" data-count="13">0</span><span class="sm">Temas</span></div>
@@ -67,7 +67,7 @@
 
 <section class="sec pg" id="tema" data-by="p">
   <div class="bgword xl" data-par="-25">Tema</div>
-  <div class="head"><div><span class="who p">Pablo · 01</span><p class="sm" style="margin-top:14px">El sistema en tres preguntas: para qué, cómo y cuándo.</p></div><h2 class="xl" data-split>El sistema de gestión de bibliotecas</h2></div>
+  <div class="head"><div><span class="who p">Diego · 01</span><p class="sm" style="margin-top:14px">El sistema en tres preguntas: para qué, cómo y cuándo.</p></div><h2 class="xl" data-split>El sistema de gestión de bibliotecas</h2></div>
   <p class="lead">Un sistema de gestión de bibliotecas (SGB) automatiza el ciclo de vida del material bibliográfico: catálogo, préstamos, renovaciones, devoluciones, reservas, multas y reportes. Su valor está en aplicar las reglas de la institución de forma consistente, sin depender de registros manuales.</p>
   <div class="g3">
     <div class="card tilt"><h3 class="xl">¿Para qué se usa?</h3><p>Para saber qué ejemplares existen, dónde están y quién los tiene. Evita pérdidas, garantiza que cada usuario reciba el trato que le corresponde (plazos y multas distintos) y entrega estadísticas para decidir qué comprar.</p></div>
@@ -78,7 +78,7 @@
 
 <section class="sec pg" id="problema" data-by="p">
   <div class="bgword xl" data-par="-25">Problema</div>
-  <div class="head"><div><span class="who p">Pablo · 02</span><p class="sm" style="margin-top:14px">Cuatro fallos de origen técnico que se refuerzan entre sí.</p></div><h2 class="xl" data-split>Problema identificado</h2></div>
+  <div class="head"><div><span class="who p">Diego · 02</span><p class="sm" style="margin-top:14px">Cuatro fallos de origen técnico que se refuerzan entre sí.</p></div><h2 class="xl" data-split>Problema identificado</h2></div>
   <div class="g3">
     <div class="card tilt"><h3 class="xl">Monolito legacy</h3><p>Interfaz, reglas y acceso a datos viven en un solo artefacto y en las mismas clases. Una corrección menor obliga a recompilar y redesplegar todo, y nadie se atreve a refactorizar porque no hay forma de verificar que nada se rompa.</p></div>
     <div class="card tilt"><h3 class="xl">Fallos de concurrencia</h3><p>Dos lectores reservan el último ejemplar al mismo tiempo: ambos leen «disponible», ambos escriben y uno pisa al otro (lost update). Sin bloqueo optimista ni restricciones únicas en la base, el sistema promete un libro que ya no existe.</p></div>
@@ -89,7 +89,7 @@
 
 <section class="sec pg" id="just" data-by="p">
   <div class="bgword xl" data-par="-25">Porqué</div>
-  <div class="head"><div><span class="who p">Pablo · 03</span><p class="sm" style="margin-top:14px">Por qué conviene invertir en rediseñar y no solo parchear.</p></div><h2 class="xl" data-split>Justificación</h2></div>
+  <div class="head"><div><span class="who p">Diego · 03</span><p class="sm" style="margin-top:14px">Por qué conviene invertir en rediseñar y no solo parchear.</p></div><h2 class="xl" data-split>Justificación</h2></div>
   <div class="g3">
     <div class="card tilt"><h3 class="xl">Técnica</h3><ul><li>Strategy aísla las reglas de multa y permite agregar categorías sin modificar código existente (principio abierto/cerrado).</li><li>Factory centraliza la creación de estrategias y elimina los if/else dispersos.</li><li>Observer desacopla las notificaciones del préstamo y la devolución.</li><li>La arquitectura hexagonal protege el dominio de la infraestructura y lo hace verificable en milisegundos.</li></ul></div>
     <div class="card tilt"><h3 class="xl">Operativa</h3><ul><li>Un solo cálculo de multa: cobros y reportes coinciden.</li><li>Sin reservas duplicadas: menos reclamos en mostrador.</li><li>Cambios de política en horas, no en semanas.</li><li>El personal nuevo se incorpora entendiendo capas y puertos, no un monolito.</li></ul></div>
@@ -98,7 +98,7 @@
 
 <section class="sec pg" id="obj" data-by="p">
   <div class="bgword xl" data-par="-25">Metas</div>
-  <div class="head"><div><span class="who p">Pablo · 04</span><p class="sm" style="margin-top:14px">Un objetivo general que se desglosa en cuatro verificables.</p></div><h2 class="xl" data-split>Objetivos</h2></div>
+  <div class="head"><div><span class="who p">Diego · 04</span><p class="sm" style="margin-top:14px">Un objetivo general que se desglosa en cuatro verificables.</p></div><h2 class="xl" data-split>Objetivos</h2></div>
   <div class="card tilt"><h4>Objetivo general</h4><p style="max-width:900px;font-size:18px;color:#fff">Diseñar la arquitectura de un sistema de gestión de bibliotecas mantenible y extensible, aplicando patrones de diseño y arquitectura hexagonal para eliminar el acoplamiento y la duplicación de reglas del sistema legacy.</p></div>
   <div class="g3">
     <div class="card tilt"><h4>Específico 1</h4><p>Modelar el cálculo de multas con Strategy y Factory para tres tipos de usuario, con cero condicionales por tipo en el dominio.</p></div>
@@ -110,7 +110,7 @@
 
 <section class="sec pg" id="stake" data-by="p">
   <div class="bgword xl" data-par="-25">Actores</div>
-  <div class="head"><div><span class="who p">Pablo · 05</span><p class="sm" style="margin-top:14px">Matriz de interesados: qué espera cada uno y cuánto pesa en las decisiones.</p></div><h2 class="xl" data-split>Stakeholders</h2></div>
+  <div class="head"><div><span class="who p">Diego · 05</span><p class="sm" style="margin-top:14px">Matriz de interesados: qué espera cada uno y cuánto pesa en las decisiones.</p></div><h2 class="xl" data-split>Stakeholders</h2></div>
   <div class="tw"><table><thead><tr><th>Interesado</th><th>Rol en el sistema</th><th>Qué necesita</th><th>Influencia</th><th>Interés</th></tr></thead><tbody>
     <tr><td>Lectores y estudiantes</td><td>Buscan, reservan y reciben avisos</td><td>Catálogo claro, reservas confiables, multas transparentes</td><td><span class="tag b">Media</span></td><td><span class="tag">Alto</span></td></tr>
     <tr><td>Bibliotecarios</td><td>Operan préstamos y devoluciones</td><td>Flujo rápido en mostrador y reglas que no obliguen a excepciones manuales</td><td><span class="tag m">Alta</span></td><td><span class="tag">Alto</span></td></tr>
@@ -121,7 +121,7 @@
 
 <section class="sec pg" id="req" data-by="p">
   <div class="bgword xl" data-par="-25">Requisitos</div>
-  <div class="head"><div><span class="who p">Pablo · 06</span><p class="sm" style="margin-top:14px">Lo que el sistema hace y la calidad con la que debe hacerlo.</p></div><h2 class="xl" data-split>Requisitos</h2></div>
+  <div class="head"><div><span class="who p">Diego · 06</span><p class="sm" style="margin-top:14px">Lo que el sistema hace y la calidad con la que debe hacerlo.</p></div><h2 class="xl" data-split>Requisitos</h2></div>
   <div class="g3">
     <div class="card tilt"><h3 class="xl">Funcionales</h3><ul><li><b>RF-01</b> Registrar, editar y dar de baja libros y ejemplares.</li><li><b>RF-02</b> Buscar por título, autor, código y materia.</li><li><b>RF-03</b> Registrar préstamos validando límite y multas pendientes.</li><li><b>RF-04</b> Renovar préstamos si no hay reservas.</li><li><b>RF-05</b> Registrar devoluciones y calcular la multa.</li><li><b>RF-06</b> Reservar ejemplares con cola por orden de llegada.</li><li><b>RF-07</b> Notificar disponibilidad y vencimientos.</li><li><b>RF-08</b> Reporte de morosos y de uso del catálogo.</li></ul></div>
     <div class="card tilt"><h3 class="xl">No funcionales</h3><ul><li><b>RNF-01 Rendimiento:</b> búsquedas y préstamos en menos de 200 ms (p95).</li><li><b>RNF-02 Concurrencia:</b> nunca dos reservas activas sobre el mismo turno.</li><li><b>RNF-03 Mantenibilidad:</b> nueva regla de multa sin modificar clases existentes.</li><li><b>RNF-04 Testabilidad:</b> dominio verificable sin base de datos ni red.</li><li><b>RNF-05 Disponibilidad:</b> 99.9% en horario de atención.</li><li><b>RNF-06 Seguridad:</b> roles diferenciados y datos personales protegidos.</li><li><b>RNF-07 Auditoría:</b> registro de cada préstamo, devolución y cobro.</li></ul></div>
@@ -130,14 +130,14 @@
 
 <!-- ============ PARTE 2 · DIEGO ============ -->
 <section class="sec part two pg" id="p2">
-  <div><span class="who d">Parte 2 · Presentado por Diego</span>
+  <div><span class="who d">Parte 2 · Presentado por Pablo</span>
   <div class="xl">Diego</div>
   <p class="sm" style="margin:20px auto 0">Backlog, casos de uso, patrones, arquitectura, pruebas, riesgos e infraestructura.</p></div>
 </section>
 
 <section class="sec pg" id="backlog" data-by="d">
   <div class="bgword xl" data-par="-25">Backlog</div>
-  <div class="head"><div><span class="who d">Diego · 07</span><p class="sm" style="margin-top:14px">Historias priorizadas con criterios de aceptación en formato Dado / Cuando / Entonces.</p></div><h2 class="xl" data-split>Product backlog</h2></div>
+  <div class="head"><div><span class="who d">Pablo · 07</span><p class="sm" style="margin-top:14px">Historias priorizadas con criterios de aceptación en formato Dado / Cuando / Entonces.</p></div><h2 class="xl" data-split>Product backlog</h2></div>
   <div class="tw"><table><thead><tr><th>ID</th><th>Historia de usuario</th><th>Prioridad</th><th>Criterios de aceptación</th></tr></thead><tbody>
     <tr><td>HU-01</td><td>Como bibliotecario quiero registrar un préstamo para controlar quién tiene cada ejemplar.</td><td><span class="tag">Alta</span></td><td>Dado un lector sin multas, cuando escaneo un ejemplar disponible, entonces se crea el préstamo con fecha de vencimiento según su tipo.</td></tr>
     <tr><td>HU-02</td><td>Como lector quiero reservar un libro prestado para obtenerlo cuando se libere.</td><td><span class="tag">Alta</span></td><td>Dado un ejemplar prestado, cuando dos lectores reservan a la vez, entonces solo uno obtiene el turno y el otro recibe un aviso de conflicto.</td></tr>
@@ -168,12 +168,12 @@
       <span class="sm">Tipo de usuario</span>
       <div class="seg" id="seg"><button class="on" data-k="est" type="button">Estudiante</button><button data-k="doc" type="button">Docente</button><button data-k="vip" type="button">VIP</button></div>
       <label>Días de retraso <b id="vd">12</b></label><input type="range" id="days" min="0" max="40" value="12" aria-label="Días de retraso">
-      <label>Valor del libro <b id="vv">$25</b></label><input type="range" id="val" min="5" max="60" value="25" aria-label="Valor del libro">
+      <label>Valor del libro <b id="vv">Q25</b></label><input type="range" id="val" min="5" max="60" value="25" aria-label="Valor del libro">
       <pre id="code"></pre>
     </div>
     <div class="card">
       <span class="sm">Multa a pagar</span>
-      <div class="big xl"><small>$</small><span id="out">0.00</span></div>
+      <div class="big xl"><small>Q</small><span id="out">0.00</span></div>
       <div class="bars" id="bars"></div>
       <svg class="chart" viewBox="0 0 400 90" preserveAspectRatio="none"><path id="curve" fill="none" stroke="#E11D48" stroke-width="3" stroke-linejoin="round"/><line id="mark" y1="0" y2="90" stroke="#fff" stroke-opacity=".4" stroke-dasharray="4"/></svg>
       <span class="sm">Multa acumulada de 0 a 40 días</span>
