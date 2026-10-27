@@ -68,7 +68,7 @@ nav.top{position:fixed;right:20px;top:calc(18px + env(safe-area-inset-top,0px));
 .stack i:nth-child(3n){background:linear-gradient(90deg,#E11D48,#7a1020)}.stack i:nth-child(4n){background:linear-gradient(90deg,#2a2a2a,#0e0e0e);outline:1px solid var(--line)}
 .giant{position:absolute;left:0;right:0;bottom:-2vw;text-align:center;font-size:clamp(120px,27vw,520px);z-index:4;background:linear-gradient(180deg,#fff 5%,rgba(255,255,255,.55) 45%,rgba(255,255,255,0) 92%);-webkit-background-clip:text;background-clip:text;color:transparent;pointer-events:none;white-space:nowrap;animation:rise 1.6s var(--ease) both}
 @keyframes rise{from{translate:0 40%;opacity:0}to{translate:0 0;opacity:1}}
-.hero .who{position:absolute;z-index:5;bottom:6vh}.hero .who.p{left:5vw}.hero .who.d{right:5vw}
+.hero .who{position:absolute;z-index:5;bottom:6vh}.hero .who.d{left:5vw}.hero .who.p{right:5vw}
 .mq{overflow:hidden;border-block:1px solid var(--line);padding:18px 0;white-space:nowrap}
 .mq div{display:inline-block;font-size:clamp(28px,4vw,56px);color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.5)}
 

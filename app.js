@@ -8,7 +8,7 @@ const norm=s=>String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/
 /* ================= PORTADA, MARQUEE, TEXTO DIVIDIDO ================= */
 const hs=[60,85,48,100,72,90,55,78,95,66];
 $('#stack').innerHTML=hs.map(h=>`<i style="height:${h}%"></i>`).join('');
-$('#mq').innerHTML=('Strategy ✦ Factory ✦ Observer ✦ Hexagonal ✦ Clean Code ✦ SOLID ✦ ').repeat(6);
+$('#mq').innerHTML=('Strategy ✦ Factory ✦ Observer ✦ Hexagonal ✦ Buenas prácticas ✦ SOLID ✦ ').repeat(6);
 gsap.to('#mq',{xPercent:-35,ease:'none',duration:30,repeat:-1});
 $$('[data-split]').forEach(el=>{
   el.innerHTML=el.textContent.trim().split(/\s+/).map((t,i)=>`<span class="w"><span style="--i:${i}">${esc(t)}</span></span>`).join(' ');
@@ -298,7 +298,7 @@ dgObs=mountDG($('#dg-observer'),{
 });
 $$('#subs input').forEach(i=>i.addEventListener('change',()=>{dgObs.setOff(i.dataset.sub,!i.checked);dgObs.select(i.dataset.sub)}));
 
-/* ---------- 10 · Hexagonal / Clean ---------- */
+/* ---------- 10 · Hexagonal ---------- */
 mountDG($('#dg-hex'),{
   initial:'core',
   info:{
@@ -332,7 +332,7 @@ mountDG($('#dg-hex'),{
       {id:'a3',x:745,y:288,w:140,h:60,t:'Cliente SMTP',s:'correo',k:'port'}],
     edges:[{a:'api',b:'p1'},{a:'api',b:'p2'},{a:'web',b:'p2'},{a:'p1',b:'core'},{a:'p2',b:'core'},{a:'core',b:'o1'},{a:'core',b:'o2'},{a:'o1',b:'a1'},{a:'o1',b:'a2',dash:1},{a:'o2',b:'a3'}],
     flows:[{label:'Petición: prestar libro',seq:['api','p1','core','o1','a1']},{label:'Notificar al lector',seq:['web','p2','core','o2','a3']}]},
-   {label:'Capas (Clean Architecture)',vb:'0 0 900 460',init:'l1',
+   {label:'Capas (regla de dependencias)',vb:'0 0 900 460',init:'l1',
     nodes:[
       {id:'l4',x:450,y:230,r:222,lbl:'top',fx:450,fy:34,t:'Frameworks e infraestructura',s:'BD · Web · SMTP',k:'r4'},
       {id:'l3',x:450,y:230,r:172,lbl:'top',fx:450,fy:84,t:'Adaptadores de interfaz',s:'Controllers · Repositorios · Gateways',k:'r3'},
@@ -463,9 +463,9 @@ $$('.acc-item')[0].classList.add('open');
 const CAT0=()=>[
  {id:'LIB-001',t:'Don Quijote de la Mancha',a:'Miguel de Cervantes',tag:'Clásico',v:25,copies:3,av:3,q:[],ver:1},
  {id:'LIB-002',t:'Cien años de soledad',a:'Gabriel García Márquez',tag:'Clásico',v:22,copies:2,av:2,q:[],ver:1},
- {id:'LIB-003',t:'Clean Code',a:'Robert C. Martin',tag:'Software',v:45,copies:1,av:0,q:['Marta Gómez'],ver:2},
+ {id:'LIB-003',t:'Refactoring',a:'Martin Fowler',tag:'Software',v:45,copies:1,av:0,q:['Marta Gómez'],ver:2},
  {id:'LIB-004',t:'Design Patterns',a:'Gamma, Helm, Johnson, Vlissides',tag:'Software',v:60,copies:2,av:1,q:[],ver:1},
- {id:'LIB-005',t:'Clean Architecture',a:'Robert C. Martin',tag:'Software',v:50,copies:1,av:0,q:[],ver:3}
+ {id:'LIB-005',t:'Designing Data-Intensive Applications',a:'Martin Kleppmann',tag:'Software',v:50,copies:1,av:0,q:[],ver:3}
 ];
 let CAT,LOANS,FINES;
 function resetLab(){CAT=CAT0();LOANS=[{name:'Prof. Luis',type:'doc',book:'LIB-003'}];FINES={};renderCat();renderLoans()}
@@ -600,8 +600,8 @@ f.addEventListener('submit',e=>{e.preventDefault();runLab()});
 $('#resetlab').addEventListener('click',()=>{if(busy)return;resetLab();stepsEl.innerHTML='<li class="idle">Datos reiniciados.</li>';resEl.hidden=true});
 const EX={
  1:{op:'prestar',name:'Ana Morales',type:'est',book:'Don Quijote de la Mancha',days:0,sim:false},
- 2:{op:'devolver',name:'Prof. Luis',type:'doc',book:'Clean Code',days:12,sim:false},
- 3:{op:'reservar',name:'Ana Morales',type:'est',book:'Clean Architecture',days:0,sim:true},
+ 2:{op:'devolver',name:'Prof. Luis',type:'doc',book:'Refactoring',days:12,sim:false},
+ 3:{op:'reservar',name:'Ana Morales',type:'est',book:'Designing Data-Intensive Applications',days:0,sim:true},
  4:{op:'buscar',name:'',type:'est',book:'Martin',days:0,sim:false}
 };
 async function typeInto(el,txt){el.classList.add('typing');el.value='';for(const ch of txt){el.value+=ch;await sleep(RM?0:24)}el.classList.remove('typing')}
