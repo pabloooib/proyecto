@@ -8,6 +8,8 @@ const norm=s=>String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/
 /* ================= PORTADA, MARQUEE, TEXTO DIVIDIDO ================= */
 const hs=[60,85,48,100,72,90,55,78,95,66];
 $('#stack').innerHTML=hs.map(h=>`<i style="height:${h}%"></i>`).join('');
+$('#mq').innerHTML=('Strategy ✦ Factory ✦ Observer ✦ Hexagonal ✦ Buenas prácticas ✦ SOLID ✦ ').repeat(6);
+gsap.to('#mq',{xPercent:-35,ease:'none',duration:30,repeat:-1});
 $$('[data-split]').forEach(el=>{
   el.innerHTML=el.textContent.trim().split(/\s+/).map((t,i)=>`<span class="w"><span style="--i:${i}">${esc(t)}</span></span>`).join(' ');
 });
